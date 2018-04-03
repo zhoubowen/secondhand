@@ -36,7 +36,7 @@ public class AskServiceImpl implements AskService {
         criteria.andNotEqualTo("deleted", CommonConstant.VALID);
         criteria.andEqualTo("status", askQueryParam.getStatus());
         if(null != askQueryParam.getMemberId()){
-            criteria.andNotEqualTo("createBy", askQueryParam.getMemberId());
+            criteria.andEqualTo("createBy", askQueryParam.getMemberId());
         }
         List<Ask> list = askMapper.selectByExample(example);
         if(!CollectionUtils.isEmpty(list)){

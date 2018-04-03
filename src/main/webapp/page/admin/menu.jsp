@@ -14,7 +14,7 @@
             <ul class="sub-menu">
                 <li class="${param.m == 0 ? 'active' : '' }"><a href="/admin/setting/index">系统设置</a></li>
                 <li class="${param.m == 1 ? 'active' : '' }"><a href="/admin/ask/index?status=0">问题管理</a></li>
-                <li class="${param.m == 2 ? 'active' : '' }"><a href="/admin/supply/index?m=2&type=0&status=1">教学视频管理</a></li>
+                <li class="${param.m == 2 ? 'active' : '' }"><a href="/admin/video/index">教学视频管理</a></li>
                 <li class="${param.m == 3 ? 'active' : '' }"><a href="/admin/member/index?roleType=2">学生管理</a></li>
                 <li class="${param.m == 4 ? 'active' : '' }"><a href="/admin/member/index?roleType=1">教师管理</a></li>
             </ul>

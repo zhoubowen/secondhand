@@ -24,6 +24,8 @@
 <script src="/js/index.js" type="text/javascript"></script>
 <script src="/js/table-editable.js"></script>
 <script src="/js/table-managed.js"></script>
+<script src="/js/jquery.fancybox.pack.js"></script>
+<script src="/js/gallery.js"></script>
 <%--<script src="/js/bootstrap-modal.js" type="text/javascript" ></script>--%>
 <%--<script src="/js/bootstrap-modalmanager.js" type="text/javascript" ></script>--%>
 <script charset="utf-8" src="/kindeditor/kindeditor-all-min.js"></script>
