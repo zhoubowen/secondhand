@@ -60,6 +60,7 @@
                                                 <th>问题</th>
                                                 <th class="hidden-480">提问者</th>
                                                 <th class="hidden-480">提问时间</th>
+                                                <th class="hidden-480">关注数</th>
                                                 <th class="hidden-480">解决状态</th>
                                                 <th >操作</th>
                                             </tr>
@@ -74,7 +75,7 @@
                                                     <td class="hidden-480">
                                                         <fmt:formatDate value="${item.createTime}" pattern="yyyy-MM-dd HH:mm:ss"/>
                                                     </td>
-                                                        <%--审核状态：0待审核，1审核通过，2拒绝--%>
+                                                    <td class="hidden-480">${item.concerns}</td>
                                                     <td class="center hidden-480">
                                                         <c:choose>
                                                             <c:when test="${item.status == 0}">
