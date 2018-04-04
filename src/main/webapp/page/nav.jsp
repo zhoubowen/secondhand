@@ -1,55 +1,37 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 
 <div class="header navbar navbar-inverse navbar-fixed-top">
-
-    <!-- BEGIN TOP NAVIGATION BAR -->
-
     <div class="navbar-inner">
-
         <div class="container">
-
-            <!-- BEGIN LOGO -->
-
             <div class="brand">
-
-                <%--<img src="/image/logo.png" alt="logo" />--%>
-
+                <img src="/image/logo.png" alt="logo" />
             </div>
 
-            <!-- END LOGO -->
-
-            <!-- BEGIN HORIZANTAL MENU -->
-
             <div class="navbar hor-menu hidden-phone hidden-tablet">
-
                 <div class="navbar-inner">
-
                     <ul class="nav">
-
-                        <li <c:if test="${type == 0}">class="active"</c:if>>
+                        <li class="${param.m == 0 ? 'active' : ''}">
                             <a href="/?type=0">
-                                <c:if test="${type == 0}">
-                                    <span class="selected"></span>
-                                </c:if>
-                                供求信息
+                                <span class="${param.m == 0 ? 'selected' : ''}"></span>
+                                未解决
                             </a>
                         </li>
 
-                        <li <c:if test="${type == 1}">class="active"</c:if>>
-                            <a  href="/?type=1">
-                                <c:if test="${type == 1}">
-                                    <span class="selected"></span>
-                                </c:if>
-                                招商投资信息
+                        <li class="${param.m == 1 ? 'active' : ''}">
+                            <a href="/?type=0">
+                                <span class="${param.m == 1 ? 'selected' : ''}"></span>
+                                已解决
                             </a>
-
                         </li>
 
-                        <li <c:if test="${type != 0 && type != 1}">class="active"</c:if>>
-                            <c:if test="${type != 0 && type != 1}">
-                                <span class="selected"></span>
-                            </c:if>
-                            <a href="/member/info">会员信息管理</a>
+
+                        <li class="${param.m == 2 ? 'active' : ''}">
+                            <a href="/?type=0">
+                                <span class="${param.m == 2 ? 'selected' : ''}"></span>
+                                个人中心
+                            </a>
                         </li>
 
                     </ul>

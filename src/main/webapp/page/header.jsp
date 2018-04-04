@@ -8,7 +8,7 @@
 <head>
 
     <meta charset="utf-8"/>
-    <title>供求|招商投资</title>
+    <title>课程答疑平台</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <meta content="" name="description"/>
     <meta content="" name="author"/>

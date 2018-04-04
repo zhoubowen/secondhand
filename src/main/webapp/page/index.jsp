@@ -7,8 +7,7 @@
 <%@include file="header.jsp"%>
 
 <body class="page-header-fixed page-full-width">
-<%@include file="nav.jsp"%>
-
+<jsp:include page="nav.jsp?m=0" flush="true"/>
 <div class="page-container row-fluid">
 
     <div class="span12 blog-page">
@@ -23,7 +22,7 @@
 
                         <div class="span12 blog-article">
 
-                            <h4><a href="/detail?id=${item.id}&type=${item.type}">${item.title}</a></h4>
+                            <h4><a href="">${item.title}</a></h4>
                             <div class="blog-img blog-tag-data">
 
                                 <ul class="unstyled inline">

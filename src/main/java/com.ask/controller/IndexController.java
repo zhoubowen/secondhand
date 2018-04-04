@@ -1,37 +1,39 @@
-//package com.ask.controller;
-//
-//import com.ask.entity.Article;
-//import com.ask.param.ArticleQueryParam;
-//import com.ask.service.ArticleService;
-//import com.ask.util.PageUtil;
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.stereotype.Controller;
-//import org.springframework.web.bind.annotation.RequestMapping;
-//import org.springframework.web.bind.annotation.RequestParam;
-//import org.springframework.web.servlet.ModelAndView;
-//
-//import java.util.List;
-//
-///**
-// */
-//@Controller
-//public class IndexController {
-//
-//
-//    @Autowired
-//    private ArticleService articleService;
-//
-//    @RequestMapping("/")
-//    public ModelAndView index(ArticleQueryParam articleQueryParam, PageUtil pageUtil){
-//        List<Article> list = articleService.findForPage(articleQueryParam, pageUtil);
-//        ModelAndView modelAndView = new ModelAndView();
-//        modelAndView.setViewName("index");
-//        modelAndView.addObject("list", list);
-//        modelAndView.addObject("type", articleQueryParam.getType());
-//        modelAndView.addObject("page", pageUtil);
-//        return modelAndView;
-//    }
-//
+package com.ask.controller;
+
+import com.ask.entity.Article;
+import com.ask.entity.Ask;
+import com.ask.param.ArticleQueryParam;
+import com.ask.param.AskQueryParam;
+import com.ask.service.ArticleService;
+import com.ask.service.AskService;
+import com.ask.util.PageUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
+import java.util.List;
+
+/**
+ */
+@Controller
+public class IndexController {
+
+
+    @Autowired
+    private AskService askService;
+
+    @RequestMapping("/")
+    public ModelAndView index(AskQueryParam askQueryParam, PageUtil pageUtil){
+        List<Ask> list = askService.findForPage(askQueryParam, pageUtil);
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("index");
+        modelAndView.addObject("list", list);
+        modelAndView.addObject("page", pageUtil);
+        return modelAndView;
+    }
+
 //    @RequestMapping("/detail")
 //    public ModelAndView detail(Integer id, Integer type){
 //        Article article = articleService.findById(id);
@@ -41,5 +43,5 @@
 //        modelAndView.addObject("article", article);
 //        return modelAndView;
 //    }
-//
-//}
+
+}
