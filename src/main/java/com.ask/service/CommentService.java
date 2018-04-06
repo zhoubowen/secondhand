@@ -17,4 +17,6 @@ public interface CommentService {
 
     List<CommentDTO> findPageCommentByMemberId(Integer memberId, PageUtil pageUtil);
 
+    List<CommentDTO> findPageCommentByAskId(Integer askId, PageUtil pageUtil);
+
 }

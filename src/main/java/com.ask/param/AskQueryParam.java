@@ -6,6 +6,15 @@ public class AskQueryParam {
 
     private Integer memberId;
     private Integer status = 0;
+    private String title;
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
     public Integer getStatus() {
         return status;

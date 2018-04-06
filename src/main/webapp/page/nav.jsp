@@ -13,14 +13,14 @@
                 <div class="navbar-inner">
                     <ul class="nav">
                         <li class="${param.m == 0 ? 'active' : ''}">
-                            <a href="/?type=0">
+                            <a href="/?status=0">
                                 <span class="${param.m == 0 ? 'selected' : ''}"></span>
                                 未解决
                             </a>
                         </li>
 
                         <li class="${param.m == 1 ? 'active' : ''}">
-                            <a href="/?type=0">
+                            <a href="/?status=1">
                                 <span class="${param.m == 1 ? 'selected' : ''}"></span>
                                 已解决
                             </a>
@@ -28,7 +28,7 @@
 
 
                         <li class="${param.m == 2 ? 'active' : ''}">
-                            <a href="/?type=0">
+                            <a href="/member/info">
                                 <span class="${param.m == 2 ? 'selected' : ''}"></span>
                                 个人中心
                             </a>

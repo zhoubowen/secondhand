@@ -19,4 +19,19 @@
   <select id="findCountCommentByMemberId" parameterType="java.lang.Integer" resultType="java.lang.Integer">
     select count(a.id) from t_article a left join t_comment c on a.id = c.article_id where a.create_by = #{memberId};
   </select>
+
+
+  <select id="findPageCommentByAskId" parameterType="java.lang.Integer" resultType="com.ask.dto.CommentDTO">
+    select
+      a.title, c.content, c.create_time as createTime, c.member_id as memberId , m.name as memberName
+    from t_comment c
+    left join t_ask a on a.id = c.article_id
+    left join t_member m on m.id = c.member_Id
+    where a.id = #{askId} order by c.id desc
+  </select>
+
+
+  <select id="findCountCommentByAskId" parameterType="java.lang.Integer" resultType="java.lang.Integer">
+    select count(a.id) from t_ask a left join t_comment c on a.id = c.article_id where a.id = #{askId};
+  </select>
 </mapper>

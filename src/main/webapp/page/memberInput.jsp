@@ -4,19 +4,13 @@
 <%@include file="header.jsp"%>
 
 <body class="page-header-fixed page-full-width">
-<%@include file="nav.jsp"%>
+<jsp:include page="nav.jsp?m=2"/>
 
 <div class="page-container">
 
     <div class="space12">
         <div class="span3 sidebar-content ">
-            <ul class="ver-inline-menu tabbable margin-bottom-25">
-                <li class="active"><a href="#tab_1" data-toggle="tab" onclick="doInfo(1)"><i class="icon-group"></i> 个人信息</a></li>
-                <li class=""><a href="#tab_2" data-toggle="tab" onclick="doInfo(2)"><i class="icon-leaf"></i> 供求信息</a></li>
-                <li class=""><a href="#tab_3" data-toggle="tab" onclick="doInfo(3)"><i class="icon-info-sign"></i> 招商投资信息</a></li>
-                <li class=""><a href="#tab_4" data-toggle="tab" onclick="doInfo(4)"><i class="icon-tasks"></i> 收到的留言</a></li>
-
-            </ul>
+            <jsp:include page="memberProfileMenu.jsp?t=1"/>
         </div>
 
         <div class="span9 ">
@@ -50,9 +44,9 @@
                                 </div>
 
                                 <div class="control-group">
-                                    <label class="control-label">所属公司</label>
+                                    <label class="control-label">手机号码</label>
                                     <div class="controls">
-                                        <input type="text" name="company" class="span6 m-wrap" value="${member.company}">
+                                        <input type="text" name="phone" class="span6 m-wrap" value="${member.phone}">
                                     </div>
                                 </div>
 

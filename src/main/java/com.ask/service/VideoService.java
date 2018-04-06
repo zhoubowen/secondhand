@@ -19,4 +19,6 @@ public interface VideoService {
 
     int add(Video video);
 
+    Video findById(Integer id);
+
 }

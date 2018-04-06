@@ -60,4 +60,9 @@ public class VideoServiceImpl implements VideoService {
     public int add(Video video) {
         return videoMapper.insert(video);
     }
+
+    @Override
+    public Video findById(Integer id) {
+        return videoMapper.selectByPrimaryKey(id);
+    }
 }

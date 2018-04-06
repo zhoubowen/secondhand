@@ -4,18 +4,13 @@
 <%@include file="header.jsp"%>
 
 <body class="page-header-fixed page-full-width">
-<%@include file="nav.jsp"%>
+<jsp:include page="nav.jsp?m=2"/>
 
 <div class="page-container">
 
     <div class="space12">
         <div class="span3 sidebar-content ">
-            <ul class="ver-inline-menu tabbable margin-bottom-25">
-                <li class="active"><a href="#tab_1" data-toggle="tab" onclick="doInfo(1)"><i class="icon-group"></i> 个人信息</a></li>
-                <li class=""><a href="#tab_2" data-toggle="tab" onclick="doInfo(2)"><i class="icon-leaf"></i> 供求信息</a></li>
-                <li class=""><a href="#tab_3" data-toggle="tab" onclick="doInfo(3)"><i class="icon-info-sign"></i> 招商投资信息</a></li>
-                <li class=""><a href="#tab_4" data-toggle="tab" onclick="doInfo(4)"><i class="icon-tasks"></i> 收到的留言</a></li>
-            </ul>
+            <jsp:include page="memberProfileMenu.jsp?t=1"/>
         </div>
 
         <div class="span9 ">
@@ -35,7 +30,7 @@
                                     <th>用户名</th>
                                     <th>昵称</th>
                                     <th>邮箱</th>
-                                    <th>所属公司名称</th>
+                                    <th>手机号码</th>
                                     <th>操作</th>
                                 </tr>
                                 </thead>
@@ -44,7 +39,7 @@
                                         <td>${member.account}</td>
                                         <td>${member.name}</td>
                                         <td>${member.email}</td>
-                                        <td>${member.company}</td>
+                                        <td>${member.phone}</td>
                                         <td>
                                             <a class="btn green" href="/member/info?type=0">编辑</a>
                                         </td>
@@ -72,26 +67,6 @@
     jQuery(document).ready(function() {
         App.init();
     });
-    
-    function doInfo(i) {
-        switch(i)
-        {
-            case 1:
-                window.location.href = "/member/info";
-                break;
-            case 2:
-                window.location.href = "/member/supply?type=0";
-                break;
-            case 3:
-                window.location.href = "/member/supply?type=1";
-                break;
-            case 4:
-                window.location.href = "/comment/list";
-                break;
-            default:
-                window.location.href = "/member/info?type=0";
-        }
-    }
 </script>
 
 </body>

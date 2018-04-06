@@ -49,5 +49,13 @@ public class CommentServiceImpl implements CommentService{
         return list;
     }
 
+    @Override
+    public List<CommentDTO> findPageCommentByAskId(Integer askId, PageUtil pageUtil) {
+        PageHelper.startPage(pageUtil.getPage(), pageUtil.getSize());
+        List<CommentDTO> list = commentMapper.findPageCommentByAskId(askId);
+        pageUtil.setRecordCount(commentMapper.findCountCommentByAskId(askId));
+        return list;
+    }
+
 
 }

@@ -2,10 +2,13 @@ package com.ask.controller;
 
 import com.ask.constant.CommonConstant;
 import com.ask.entity.Article;
+import com.ask.entity.Ask;
 import com.ask.entity.Member;
 import com.ask.exception.BusinessException;
 import com.ask.param.ArticleQueryParam;
+import com.ask.param.AskQueryParam;
 import com.ask.service.ArticleService;
+import com.ask.service.AskService;
 import com.ask.service.MemberService;
 import com.ask.util.MD5Util;
 import com.ask.util.PageUtil;
@@ -30,6 +33,8 @@ public class MemberController {
     private MemberService memberService;
     @Autowired
     private ArticleService articleService;
+    @Autowired
+    private AskService askService;
 
 
     @RequestMapping("/loginInput")
@@ -46,6 +51,7 @@ public class MemberController {
             Member longMember = memberService.login(member);
             HttpSession httpSession = request.getSession();
             httpSession.setAttribute("memberId", longMember.getId());
+            httpSession.setAttribute("roleType", longMember.getRoleType());
             httpSession.setAttribute("name", longMember.getName());
             return "redirect:/";
         } catch (BusinessException e) {
@@ -161,6 +167,35 @@ public class MemberController {
         article.setStatus(CommonConstant.DELETE);
         articleService.update(article);
         return "redirect:/member/supply?type=" + type;
+    }
+
+    @RequestMapping("askList")
+    public ModelAndView askList(AskQueryParam askQueryParam, PageUtil pageUtil, HttpServletRequest request){
+        askQueryParam.setMemberId((Integer) request.getSession().getAttribute("memberId"));
+        List<Ask> list = askService.findForPage(askQueryParam, pageUtil);
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("askList");
+        modelAndView.addObject("list", list);
+        modelAndView.addObject("page", pageUtil);
+        return modelAndView;
+    }
+
+    @RequestMapping("askInput")
+    public ModelAndView askInput(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("askInput");
+        return modelAndView;
+    }
+
+    @RequestMapping("askSave")
+    public String askSave(Ask ask, HttpServletRequest request){
+        ask.setCreateBy((Integer) request.getSession().getAttribute("memberId"));
+        ask.setDeleted(CommonConstant.VERIFY);
+        ask.setStatus(CommonConstant.VERIFY);
+        ask.setConcerns(CommonConstant.VERIFY);
+        ask.setUpdateTime(new Date());
+        askService.add(ask);
+        return "redirect:/member/askList";
     }
 
 }

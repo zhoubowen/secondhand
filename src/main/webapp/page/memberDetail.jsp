@@ -4,7 +4,7 @@
 <%@include file="header.jsp"%>
 
 <body class="page-header-fixed page-full-width">
-<%@include file="nav.jsp"%>
+<jsp:include page="nav.jsp?m=2"/>
 
 <div class="page-container">
 

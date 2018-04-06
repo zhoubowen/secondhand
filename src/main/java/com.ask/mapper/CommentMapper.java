@@ -13,4 +13,8 @@ public interface CommentMapper extends Mapper<Comment> {
     List<CommentDTO> findPageCommentByMemberId(Integer memberId);
 
     Integer findCountCommentByMemberId(Integer memberId);
+
+    List<CommentDTO> findPageCommentByAskId(Integer askId);
+
+    Integer findCountCommentByAskId(Integer askId);
 }

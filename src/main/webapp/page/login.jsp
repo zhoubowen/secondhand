@@ -101,7 +101,7 @@
 
         <p>请输入以下注册信息:</p>
 
-        <div class="control-group error">
+        <div class="control-group">
 
             <label class="control-label visible-ie8 visible-ie9">用户名</label>
 
@@ -119,7 +119,7 @@
 
         </div>
 
-        <div class="control-group error">
+        <div class="control-group">
 
             <label class="control-label visible-ie8 visible-ie9">昵称</label>
 
@@ -138,7 +138,7 @@
         </div>
 
 
-        <div class="control-group error">
+        <div class="control-group">
 
             <label class="control-label visible-ie8 visible-ie9">密码</label>
 
@@ -174,7 +174,7 @@
 
         </div>
 
-        <div class="control-group error">
+        <div class="control-group">
 
             <label class="control-label visible-ie8 visible-ie9">邮箱</label>
 
@@ -192,19 +192,34 @@
 
         </div>
 
-        <div class="control-group error">
+        <div class="control-group">
 
-            <label class="control-label visible-ie8 visible-ie9">所属公司名称</label>
+            <label class="control-label visible-ie8 visible-ie9">手机号码</label>
 
             <div class="controls">
 
                 <div class="input-icon left">
 
-                    <i class="icon-user-md"></i>
+                    <i class="icon-headphones"></i>
 
-                    <input class="m-wrap placeholder-no-fix" type="text" placeholder="所属公司名称" name="company">
+                    <input class="m-wrap placeholder-no-fix" type="text" placeholder="手机号码" name="phone">
 
-                </div><label for="company" class="help-inline help-small no-left-padding">公司名称必填.</label>
+                </div><label for="phone" class="help-inline help-small no-left-padding">手机号码必填.</label>
+
+            </div>
+
+        </div>
+
+        <div class="control-group">
+
+            <label class="control-label visible-ie8 visible-ie9">角色类型</label>
+
+            <div class="controls">
+                <select name="roleType">
+                    <option value="2">学生</option>
+                    <option value="1">教师</option>
+                </select>
+                <label for="roleType" class="help-inline help-small no-left-padding">角色类型必选.</label>
 
             </div>
 

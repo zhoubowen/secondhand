@@ -12,5 +12,9 @@ public interface AskService {
 
     List<Ask> findForPage(AskQueryParam askQueryParam, PageUtil pageUtil);
 
+    Ask findById(Integer id);
+
     int updateByPrimaryKeySelective(Ask ask);
+
+    int add(Ask ask);
 }

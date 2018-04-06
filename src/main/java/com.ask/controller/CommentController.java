@@ -1,11 +1,15 @@
 package com.ask.controller;
 
+import com.alibaba.fastjson.JSON;
+import com.ask.constant.CommonConstant;
 import com.ask.dto.CommentDTO;
+import com.ask.entity.Ask;
 import com.ask.entity.Comment;
 import com.ask.param.CommentQueryParam;
 import com.ask.response.BaseResponse;
 import com.ask.response.ErrorResponse;
 import com.ask.response.SuccessResponse;
+import com.ask.service.AskService;
 import com.ask.service.CommentService;
 import com.ask.util.PageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +30,8 @@ public class CommentController {
 
     @Autowired
     private CommentService commentService;
+    @Autowired
+    private AskService askService;
 
     @RequestMapping("add")
     @ResponseBody
@@ -38,6 +44,10 @@ public class CommentController {
             comment.setMemberId(memberId);
             int row = commentService.add(comment);
             if(row > 0){
+                Ask ask = new Ask();
+                ask.setId(comment.getArticleId());
+                ask.setStatus(CommonConstant.VALID);
+                askService.updateByPrimaryKeySelective(ask);
                 return SuccessResponse.newInstance();
             }else{
                 return ErrorResponse.newInstance();
@@ -56,6 +66,12 @@ public class CommentController {
         modelAndView.addObject("list", list);
         modelAndView.addObject("page", pageUtil);
         return modelAndView;
+    }
+
+    @RequestMapping("askCommentList")
+    public Object list(Integer askId, PageUtil pageUtil){
+        List<CommentDTO> list = commentService.findPageCommentByAskId(askId, pageUtil);
+        return SuccessResponse.newInstance(JSON.toJSONString(list));
     }
 
 }
