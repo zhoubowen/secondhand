@@ -53,7 +53,7 @@ public class MemberController {
             httpSession.setAttribute("memberId", longMember.getId());
             httpSession.setAttribute("roleType", longMember.getRoleType());
             httpSession.setAttribute("name", longMember.getName());
-            return "redirect:/";
+            return "redirect:/member/info";
         } catch (BusinessException e) {
             modelAndView.addObject("code", e.getCode());
             modelAndView.getModel().put("msg", e.getMsg());
