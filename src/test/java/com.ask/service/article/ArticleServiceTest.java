@@ -1,8 +1,8 @@
-package com.ask.service.article;
+package com.secondhand.service.article;
 
-import com.ask.BaseTest;
-import com.ask.entity.Article;
-import com.ask.service.ArticleService;
+import com.secondhand.BaseTest;
+import com.secondhand.entity.Article;
+import com.secondhand.service.ArticleService;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 

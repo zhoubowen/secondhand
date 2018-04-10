@@ -1,10 +1,10 @@
-package com.ask.service.comment;
+package com.secondhand.service.comment;
 
-import com.ask.BaseTest;
-import com.ask.dto.CommentDTO;
-import com.ask.entity.Comment;
-import com.ask.service.CommentService;
-import com.ask.util.PageUtil;
+import com.secondhand.BaseTest;
+import com.secondhand.dto.CommentDTO;
+import com.secondhand.entity.Comment;
+import com.secondhand.service.CommentService;
+import com.secondhand.util.PageUtil;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 

@@ -1,11 +1,11 @@
-package com.ask.service.member;
+package com.secondhand.service.member;
 
-import com.ask.BaseTest;
-import com.ask.entity.Member;
-import com.ask.param.MemberQueryParam;
-import com.ask.service.MemberService;
-import com.ask.util.MD5Util;
-import com.ask.util.PageUtil;
+import com.secondhand.BaseTest;
+import com.secondhand.entity.Member;
+import com.secondhand.param.MemberQueryParam;
+import com.secondhand.service.MemberService;
+import com.secondhand.util.MD5Util;
+import com.secondhand.util.PageUtil;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
