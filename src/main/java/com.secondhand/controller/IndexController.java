@@ -40,12 +40,10 @@ public class IndexController {
     public ModelAndView index(AskQueryParam askQueryParam, PageUtil pageUtil){
         askQueryParam.setStatus(CommonConstant.VALID);
         List<Ask> list = askService.findForPage(askQueryParam, pageUtil);
-        pageUtil.setSize(3);
-        List<Video> videos = videoService.findForPage(new VideoQueryParam(), pageUtil);
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("/template/hwmax/index");
+        modelAndView.setViewName("index");
         modelAndView.addObject("list", list);
-        modelAndView.addObject("videos", videos);
+        modelAndView.addObject("page", pageUtil);
         return modelAndView;
     }
 
@@ -53,7 +51,7 @@ public class IndexController {
     public ModelAndView list(AskQueryParam askQueryParam, PageUtil pageUtil){
         List<Ask> list = askService.findForPage(askQueryParam, pageUtil);
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("/template/hwmax/askList");
+        modelAndView.setViewName("askList");
         modelAndView.addObject("list", list);
         modelAndView.addObject("page", pageUtil);
         return modelAndView;
@@ -69,7 +67,7 @@ public class IndexController {
             boolean concern = concernService.isConcern(id, memberId);
             modelAndView.addObject("concern", concern);
         }
-        modelAndView.setViewName("/template/hwmax/askDetail");
+        modelAndView.setViewName("detail");
         modelAndView.addObject("ask", ask);
         modelAndView.addObject("comment", CollectionUtils.isEmpty(commentList) ? null : commentList.get(0));
         return modelAndView;
