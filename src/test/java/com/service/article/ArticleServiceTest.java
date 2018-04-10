@@ -1,6 +1,6 @@
 package com.secondhand.service.article;
 
-import com.secondhand.BaseTest;
+import com.BaseTest;
 import com.secondhand.entity.Article;
 import com.secondhand.service.ArticleService;
 import org.junit.Test;

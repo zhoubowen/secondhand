@@ -1,6 +1,6 @@
 package com.secondhand.service.member;
 
-import com.secondhand.BaseTest;
+import com.BaseTest;
 import com.secondhand.entity.Member;
 import com.secondhand.param.MemberQueryParam;
 import com.secondhand.service.MemberService;

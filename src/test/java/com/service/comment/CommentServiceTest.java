@@ -1,6 +1,6 @@
 package com.secondhand.service.comment;
 
-import com.secondhand.BaseTest;
+import com.BaseTest;
 import com.secondhand.dto.CommentDTO;
 import com.secondhand.entity.Comment;
 import com.secondhand.service.CommentService;
@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * Created by bowen on 2018-03-06 22:53
  */
-public class CommentServiceTest extends BaseTest{
+public class CommentServiceTest extends BaseTest {
 
     @Autowired
     private CommentService commentService;

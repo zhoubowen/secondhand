@@ -28,7 +28,7 @@
         <!--多个包目录用分号分隔,这里配置了一个包下的所有类的别名-->
         <!-- 给映射的类配置别名 -->
         <!-- 默认的别名是model类的首字母小写 -->
-        <!-- 如：Member。别名为：com.secondhand.service.member -->
+        <!-- 如：Member。别名为：com.secondhand.com.service.member -->
         <!--<property name="typeAliasesPackage" value="com.secondhand.entity" />-->
         <property name="plugins">
             <array>
