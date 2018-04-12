@@ -1,18 +1,17 @@
-package com.secondhand.service.member;
+package com.student.report.service.member;
 
 import com.BaseTest;
-import com.secondhand.entity.Member;
-import com.secondhand.param.MemberQueryParam;
-import com.secondhand.service.MemberService;
-import com.secondhand.util.MD5Util;
-import com.secondhand.util.PageUtil;
+import com.student.report.entity.Member;
+import com.student.report.param.MemberQueryParam;
+import com.student.report.service.MemberService;
+import com.student.report.util.MD5Util;
+import com.student.report.util.PageUtil;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
 /**
- * Created by bowen on 2018-02-27 09:31
  */
 public class MemberServiceTest extends BaseTest {
 

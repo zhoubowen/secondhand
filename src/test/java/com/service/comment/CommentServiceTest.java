@@ -1,17 +1,16 @@
-package com.secondhand.service.comment;
+package com.student.report.service.comment;
 
 import com.BaseTest;
-import com.secondhand.dto.CommentDTO;
-import com.secondhand.entity.Comment;
-import com.secondhand.service.CommentService;
-import com.secondhand.util.PageUtil;
+import com.student.report.dto.CommentDTO;
+import com.student.report.entity.Comment;
+import com.student.report.service.CommentService;
+import com.student.report.util.PageUtil;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
 /**
- * Created by bowen on 2018-03-06 22:53
  */
 public class CommentServiceTest extends BaseTest {
 

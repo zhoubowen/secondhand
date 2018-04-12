@@ -28,8 +28,8 @@
         <!--多个包目录用分号分隔,这里配置了一个包下的所有类的别名-->
         <!-- 给映射的类配置别名 -->
         <!-- 默认的别名是model类的首字母小写 -->
-        <!-- 如：Member。别名为：com.secondhand.com.service.member -->
-        <!--<property name="typeAliasesPackage" value="com.secondhand.entity" />-->
+        <!-- 如：Member。别名为：com.student.report.com.service.member -->
+        <!--<property name="typeAliasesPackage" value="com.student.report.entity" />-->
         <property name="plugins">
             <array>
                 <bean class="com.github.pagehelper.PageHelper">
@@ -58,7 +58,7 @@
     </bean>
 
     <bean id="mapperScannerConfigurer" class="tk.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.secondhand.mapper"/>
+        <property name="basePackage" value="com.student.report.mapper"/>
         <property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>
     </bean>
 

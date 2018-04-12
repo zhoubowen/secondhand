@@ -44,34 +44,51 @@
                         </div>
 
                         <div class="portlet-body">
-                            <a class="btn green" href="/admin/member/input?roleType=${param.roleType}">添加</a>
-                            <hr/>
-                            <table class="table table-striped table-bordered table-hover">
-                                <thead>
-                                <tr>
-                                    <th>账号</th>
-                                    <th class="hidden-480">姓名</th>
-                                    <th class="hidden-480">手机号码</th>
-                                    <th class="hidden-480">邮箱</th>
-                                    <th >操作</th>
-                                </tr>
+                            <%--<a class="btn green" href="/admin/member/input?roleType=${param.roleType}">添加</a>--%>
+                            <%--<hr/>--%>
+                            <div class="tabbable tabbable-custom">
+                                <ul class="nav nav-tabs">
+                                    <li class="${param.status == 1 ? 'active' : ''}"><a href="/admin/member/index?roleType=2&status=1">审核通过</a></li>
+                                    <li class="${param.status == 0 ? 'active' : ''}"><a href="/admin/member/index?roleType=2&status=0">待审核</a></li>
+                                </ul>
 
-                                </thead>
+                                <div class="tab-content">
+                                    <div class="tab-pane active">
+                                        <table class="table table-striped table-bordered table-hover">
+                                            <thead>
+                                            <tr>
+                                                <th>姓名</th>
+                                                <th class="hidden-480">班级</th>
+                                                <th class="hidden-480">专业</th>
+                                                <th class="hidden-480">宿舍</th>
+                                                <th class="hidden-480">学费</th>
+                                                <th class="hidden-480">学籍</th>
+                                                <th class="hidden-480">联系电话</th>
+                                                <th >操作</th>
+                                            </tr>
 
-                                <tbody>
-                                <c:forEach var="item" items="${list}">
-                                    <tr class="odd gradeX">
-                                        <td>${item.account}</td>
-                                        <td class="hidden-480">${item.name}</td>
-                                        <td class="hidden-480">${item.phone}</td>
-                                        <td class="hidden-480"><a href="mailto:shuxer@gmail.com">${item.email}</a></td>
-                                        <td >
-                                            <a class="btn red" data-toggle = "modal" data-id= "${item.id}" data-target="#static">删除</a>
-                                        </td>
-                                    </tr>
-                                </c:forEach>
-                                </tbody>
-                            </table>
+                                            </thead>
+
+                                            <tbody>
+                                            <c:forEach var="item" items="${list}">
+                                                <tr class="odd gradeX">
+                                                    <td>${item.name}</td>
+                                                    <td>${item.clazzDic.dicValue}</td>
+                                                    <td>${item.majorDic.dicValue}</td>
+                                                    <td>${item.dormitoryDic.dicValue}</td>
+                                                    <td class="hidden-480">${item.tuition}</td>
+                                                    <td class="hidden-480">${item.schoolNo}</td>
+                                                    <td class="hidden-480">${item.phone}</td>
+                                                    <td >
+                                                        <a class="btn red" data-toggle = "modal" data-id= "${item.id}" data-target="#static">删除</a>
+                                                    </td>
+                                                </tr>
+                                            </c:forEach>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
 
                             <%@include file="pagination.jsp"%>
 
